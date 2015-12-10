@@ -15,27 +15,13 @@ function Spell( name, cost, description ) {
   this.name = name;
   this.cost = cost;
   this.description = description;
+
+  this.getDetails = function(){
+    var spellsDetails = name + ", " + cost + ", " + description;
+    console.log(spellsDetails);
+    return spellsDetails;
+  };
 }
-
-  /**
-   * Returns a string of all of the spell's details.
-   * The format doesn't matter, as long as it contains the spell name, cost, and description.
-   *
-   * @name getDetails
-   * @return {string} details containing all of the spells information.
-   */
-
-// Spell.prototype.getName = function(){
-//   return this.name;
-// };
-
-// Spell.prototype.getCost = function(){
-//   return this.cost;
-// };
-
-// Spell.prototype.getDescription = function(){
-//   return this.name;
-// };
 /**
  * A spell that deals damage.
  * We want to keep this code DRY (Don't Repeat Yourself).
