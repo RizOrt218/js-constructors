@@ -46,8 +46,10 @@ function DamageSpell( name, cost, damage, description ){
  * @method  invoke
  */
 
-function Spellcaster( name ){
+function Spellcaster( name, health, mana ){
   this.name = name;
+  this.health = health;
+  this.mana = mana;
 }
 
   /**
