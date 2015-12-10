@@ -1,15 +1,3 @@
-/**
- * Creates a generic spell that can be cast.
- *
- * @name Spell
- * @param {string} name         The name of the spell.
- * @param {number} cost         The amount needed to cast this spell.
- * @param {string} description  A short description of the spell.
- * @property {string} name
- * @property {number} cost
- * @property {string} description
- * @method   printDetails
- */
 
 function Spell( name, cost, description ) {
   this.name = name;
@@ -54,16 +42,10 @@ function Spellcaster( name, health, mana, isAlive ){
       return false;
     }
   };
+
+
+
 }
-  /**
-   * @method spendMana
-   *
-   * Reduces the spellcaster's mana by `cost`.
-   * Mana should only be reduced only if there is enough mana to spend.
-   *
-   * @param  {number} cost      The amount of mana to spend.
-   * @return {boolean} success  Whether mana was successfully spent.
-   */
 
   /**
    * @method invoke
