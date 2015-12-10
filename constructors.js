@@ -29,39 +29,28 @@ function DamageSpell( name, cost, damage, description ){
 }
 
   DamageSpell.prototype = Spell.prototype;
-/**
- * Now that you've created some spells, let's create
- * `Spellcaster` objects that can use them!
- *
- * @name Spellcaster
- * @param {string} name         The spellcaster's name.
- * @param {number} health       The spellcaster's health points.
- * @param {number} mana         The spellcaster's mana points, used for casting spells.
- * @property {string} name
- * @property {number} health
- * @property {mana} mana
- * @property {boolean} isAlive  Default value should be `true`.
- * @method  inflictDamage
- * @method  spendMana
- * @method  invoke
- */
 
-function Spellcaster( name, health, mana ){
+function Spellcaster( name, health, mana, isAlive ){
   this.name = name;
   this.health = health;
   this.mana = mana;
+  this.isAlive = true;
+
+  this.inflictDamage = function( damage ){
+    this.health -= damage;
+
+    if( this.health <= 0 ){
+      this.health = 0;
+      this.isAlive = false;
+    }
+  };
+
+  this.spendMana = function(){
+
+  };
 }
 
-  /**
-   * @method inflictDamage
-   *
-   * The spellcaster loses health equal to `damage`.
-   * Health should never be negative.
-   * If the spellcaster's health drops to 0,
-   * its `isAlive` property should be set to `false`.
-   *
-   * @param  {number} damage  Amount of damage to deal to the spellcaster
-   */
+
 
   /**
    * @method spendMana
