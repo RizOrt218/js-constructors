@@ -45,13 +45,16 @@ function Spellcaster( name, health, mana, isAlive ){
     }
   };
 
-  this.spendMana = function(){
-
+  this.spendMana = function( cost ){
+    if( this.mana > cost ){
+      this.mana -= cost;
+      return true;
+    }
+    if( this.mana < cost ){
+      return false;
+    }
   };
 }
-
-
-
   /**
    * @method spendMana
    *
