@@ -11,6 +11,12 @@
  * @method   printDetails
  */
 
+function Spell( name, cost, description ) {
+  this.name = name;
+  this.cost = cost;
+  this.description = description;
+}
+
   /**
    * Returns a string of all of the spell's details.
    * The format doesn't matter, as long as it contains the spell name, cost, and description.
@@ -19,6 +25,17 @@
    * @return {string} details containing all of the spells information.
    */
 
+// Spell.prototype.getName = function(){
+//   return this.name;
+// };
+
+// Spell.prototype.getCost = function(){
+//   return this.cost;
+// };
+
+// Spell.prototype.getDescription = function(){
+//   return this.name;
+// };
 /**
  * A spell that deals damage.
  * We want to keep this code DRY (Don't Repeat Yourself).
@@ -108,3 +125,4 @@
    * @param  {Spellcaster} target         The spell target to be inflicted.
    * @return {boolean}                    Whether the spell was successfully cast.
    */
+
