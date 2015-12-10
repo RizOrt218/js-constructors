@@ -46,8 +46,8 @@ function DamageSpell( name, cost, damage, description ){
  * @method  invoke
  */
 
-function Spellcaster(){
-
+function Spellcaster( name ){
+  this.name = name;
 }
 
   /**
