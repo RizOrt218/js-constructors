@@ -1,9 +1,10 @@
-
+//class Spell with constructors of name, cost, description
 function Spell( name, cost, description ) {
   this.name = name;
   this.cost = cost;
   this.description = description;
 
+//method getDetails
   this.getDetails = function(){
     var spellsDetails = name + ", " + cost + ", " + description;
     //console.log(spellsDetails);
@@ -16,6 +17,7 @@ function DamageSpell( name, cost, damage, description ){
   this.damage = damage;
 }
 
+//DamageSpell prototype inherits Spell.prototype
   DamageSpell.prototype = Spell.prototype;
 
 function Spellcaster( name, health, mana, isAlive ){
@@ -27,14 +29,16 @@ function Spellcaster( name, health, mana, isAlive ){
   this.inflictDamage = function( damage ){
     this.health -= damage;
 
+//health is 0 and isAlive is false if health is less than 0
     if( this.health <= 0 ){
       this.health = 0;
       this.isAlive = false;
     }
   };
 
+//method spendMana takes in arg cost
   this.spendMana = function( cost ){
-    if( this.mana > cost ){
+    if( this.mana > cost ){  //mana deducts from cost if mana is more than cost
       this.mana -= cost;
       return true;
     }
@@ -43,6 +47,15 @@ function Spellcaster( name, health, mana, isAlive ){
     }
   };
 
+  this.invoke = function( spell, target ){
+    if( spell instanceof Spell ){
+      return true;
+    }
+    if( spell instanceof DamageSpell ){
+      return false;
+    }
+
+  };
 
 
 }

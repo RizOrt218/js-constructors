@@ -158,3 +158,4 @@ to help you with this.
 **target**: Spellcaster, The spell target to be inflicted.
 
 **Returns**: boolean, Whether the spell was successfully cast.
+# Palindromic-Number-Generator
