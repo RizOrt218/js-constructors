@@ -38,7 +38,7 @@ function Spellcaster( name, health, mana, isAlive ){
 
 //method spendMana takes in arg cost
   this.spendMana = function( cost ){
-    if( this.mana > cost ){  //mana deducts from cost if mana is more than cost
+    if( this.mana >= cost ){  //mana deducts from cost if mana is more than cost
       this.mana -= cost;
       return true;
     }
@@ -48,12 +48,23 @@ function Spellcaster( name, health, mana, isAlive ){
   };
 
   this.invoke = function( spell, target ){
-    if( spell instanceof Spell ){
-      return true;
-    }
-    if( spell instanceof DamageSpell ){
+    // if( spell instanceof Spell && !(spell instanceof DamageSpell) ){
+    //   console.log('can you hear me');
+    //   var wamana = this.spendMana( this.mana );
+    //   return wamana;
+    } else if( spell instanceof DamageSpell ){
+      var bamana = this.spendMana( this.mana );
+      return bamana;
+      // if( this.mana <= 0 ){
+      //   return false;
+      // } else {
+      //   return true;
+      // }
+    } else {
       return false;
     }
+
+
 
   };
 
